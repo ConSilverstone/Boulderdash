@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-/// This is a new text comment
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
