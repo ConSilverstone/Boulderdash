@@ -123,7 +123,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="Boulder.cpp" />
+    <ClCompile Include="Diamond.cpp" />
+    <ClCompile Include="Dirt.cpp" />
+    <ClCompile Include="Exit.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GridObject.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ResetButton.cpp" />
+    <ClCompile Include="SpriteObject.cpp" />
+    <ClCompile Include="TextObject.cpp" />
+    <ClCompile Include="Wall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="Boulder.h" />
+    <ClInclude Include="Diamond.h" />
+    <ClInclude Include="Dirt.h" />
+    <ClInclude Include="Exit.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GridObject.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="ResetButton.h" />
+    <ClInclude Include="SpriteObject.h" />
+    <ClInclude Include="TextObject.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
