@@ -57,7 +57,19 @@ void Level::Draw(sf::RenderTarget & _target)
 
 void Level::Update(sf::Time _frameTime)
 {
-	// TODO
+	// rows
+	for (int y = 0; y < m_contents.size(); ++y)
+	{
+		// cells
+		for (int x = 0; x < m_contents[y].size(); ++x)
+		{
+			//Sticky outies (grid objects)
+			for (int z = 0; z < m_contents[y][x].size(); ++z)
+			{
+				m_contents[y][x][z]->Update(_frameTime);
+			}
+		}
+	}
 }
 
 void Level::Input(sf::Event _gameEvent)
@@ -169,13 +181,6 @@ void Level::LoadLevel(int _levelToLoad)
 				wall->SetGridPosition(x, y);
 				m_contents[y][x].push_back(wall);
 			}
-			else if (ch == 'S')
-			{
-				StorageSpace* storagespace = new StorageSpace();
-				storagespace->SetLevel(this);
-				storagespace->SetGridPosition(x, y);
-				m_contents[y][x].push_back(storagespace);
-			}
 			else if (ch == 'P')
 			{
 				Player* player = new Player();
@@ -247,4 +252,22 @@ bool Level::MoveObjectTo(GridObject * _toMove, sf::Vector2i _targetPos)
 
 	// return failure
 	return false;
+}
+
+std::vector<GridObject*> Level::GetObjectAt(sf::Vector2i _targetPos)
+{
+	// Don't trust the data
+	// Make sure the coordinates are within the vector size
+	if (_targetPos.y >= 0 && _targetPos.y < m_contents.size()
+		&& _targetPos.x >= 0 && _targetPos.x < m_contents[_targetPos.y].size())
+	{
+		// Get the contents
+		// Return them
+		return m_contents[_targetPos.y][_targetPos.x];
+	}
+
+	// Default return
+	// Return an empty vector with nothing in it
+	// (default constructor)
+	return std::vector<GridObject*>();
 }
