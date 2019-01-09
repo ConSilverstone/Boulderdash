@@ -20,8 +20,12 @@ public:
 	void ReloadLevel();
 	void LoadNextLevel();
 
+	void SetCurrentScore();
+
 	float GetCellSize();
+	bool LevelComplete();
 	bool MoveObjectTo(GridObject* _toMove, sf::Vector2i _targetPos);
+	bool deleteObjectAt(GridObject* _toDelete, sf::Vector2i _targetLocation);
 	std::vector<GridObject*> GetObjectAt(sf::Vector2i _targetPos);
 
 private:
@@ -30,4 +34,8 @@ private:
 	int m_currentLevel;
 	std::vector< std::vector <sf::Sprite> > m_background;
 	std::vector< std::vector <std::vector<GridObject*> > > m_contents;
+	int m_levelDiamonds;
+	int m_currentScore;
+	int m_pendingLoad;
+	bool m_pendingReload;
 };
