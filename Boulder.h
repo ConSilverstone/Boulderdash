@@ -18,6 +18,6 @@ private:
 
 	float m_currentTime;
 	float m_timeFallen;
-	bool has_fallen;
+	bool hasSlid;
 
 };
