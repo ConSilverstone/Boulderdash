@@ -8,7 +8,7 @@
 Boulder::Boulder()
 	: GridObject()
 	, m_currentTime(0.0f)
-	, m_timeFallen(0.3f)
+	, m_timeFallen(0.5f)
 	, hasSlid(false)
 {
 	m_sprite.setTexture(AssetManager::GetTexture("graphics/box.png"));
